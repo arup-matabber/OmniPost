@@ -1,0 +1,86 @@
+.composer { display: grid; grid-template-columns: 1fr 380px; gap: 24px; padding: 32px; height: calc(100vh - 64px); overflow: hidden; background: #0a0a0f; color: #fff; font-family: system-ui, sans-serif; }
+.left { display: flex; flex-direction: column; gap: 20px; overflow-y: auto; padding-right: 8px; }
+.left::-webkit-scrollbar { width: 6px; }
+.left::-webkit-scrollbar-thumb { background: #1e1e2e; border-radius: 4px; }
+.card { background: #0f0f1a; border: 1px solid #1e1e2e; border-radius: 16px; padding: 24px; }
+.cardTitle { font-size: 14px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+
+.platformGrid { display: flex; flex-wrap: wrap; gap: 10px; }
+.platformChip { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 100px; border: 1px solid #1e1e2e; cursor: pointer; font-size: 13px; color: #64748b; transition: all 0.2s ease; background: transparent; }
+.platformChip:hover { border-color: #334155; }
+.platformChip.selected { border-color: #6366f1; background: rgba(99,102,241,0.15); color: #a5b4fc; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #1e1e2e; transition: background 0.2s ease; }
+.platformChip.selected .dot { background: #6366f1; }
+
+.editorArea { width: 100%; min-height: 160px; background: #0a0a0f; border: 1px solid #1e1e2e; border-radius: 12px; padding: 16px; color: #fff; font-size: 15px; line-height: 1.6; resize: vertical; outline: none; font-family: inherit; transition: border-color 0.2s ease; }
+.editorArea:focus { border-color: #6366f1; }
+.editorToolbar { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+.charCount { font-size: 12px; color: #475569; }
+.aiBtn { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.3); color: #c084fc; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+.aiBtn:hover { background: rgba(168,85,247,0.25); }
+
+.mediaZone { border: 2px dashed #1e1e2e; border-radius: 12px; padding: 32px; text-align: center; cursor: pointer; transition: all 0.2s ease; }
+.mediaZone:hover { border-color: #6366f1; background: rgba(99,102,241,0.05); }
+.mediaZone p { color: #475569; font-size: 14px; margin-top: 8px; }
+.mediaZone .icon { font-size: 32px; }
+.mediaPreviews { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+.mediaThumb { width: 80px; height: 80px; border-radius: 10px; background: #1e1e2e; position: relative; overflow: hidden; }
+.mediaThumb img { width: 100%; height: 100%; object-fit: cover; }
+.mediaThumb .remove { position: absolute; top: 4px; right: 4px; width: 18px; height: 18px; border-radius: 50%; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; color: white; border: none; }
+.mediaThumb .edit { position: absolute; top: 4px; right: 26px; width: 18px; height: 18px; border-radius: 50%; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; color: white; border: none; transition: background 0.2s; }
+.mediaThumb .edit:hover { background: rgba(99,102,241,0.9); }
+
+.scheduleRow { display: flex; gap: 12px; align-items: center; }
+.scheduleToggle { display: flex; align-items: center; gap: 10px; }
+.toggle { width: 40px; height: 22px; border-radius: 100px; background: #1e1e2e; position: relative; cursor: pointer; border: none; padding: 0; transition: background 0.2s ease; }
+.toggle.on { background: #6366f1; }
+.toggleThumb { width: 18px; height: 18px; border-radius: 50%; background: #fff; position: absolute; top: 2px; left: 2px; transition: left 0.2s; }
+.toggle.on .toggleThumb { left: 20px; }
+.dateInput { flex: 1; padding: 10px 14px; border-radius: 10px; background: #0a0a0f; border: 1px solid #1e1e2e; color: #fff; font-size: 14px; outline: none; }
+.dateInput:focus { border-color: #6366f1; }
+
+.actionRow { display: flex; gap: 12px; }
+.btnDraft { flex: 1; padding: 14px; border-radius: 12px; border: 1px solid #334155; background: transparent; color: #94a3b8; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+.btnDraft:hover { background: rgba(255,255,255,0.05); }
+.btnPublish { flex: 2; padding: 14px; border-radius: 12px; background: linear-gradient(135deg, #6366f1, #a855f7); color: #fff; font-size: 15px; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s ease; }
+.btnPublish:hover { opacity: 0.9; }
+
+.right { display: flex; flex-direction: column; gap: 16px; overflow-y: auto; padding-right: 8px; }
+.right::-webkit-scrollbar { width: 6px; }
+.right::-webkit-scrollbar-thumb { background: #1e1e2e; border-radius: 4px; }
+.previewHeader { display: flex; justify-content: space-between; align-items: center; }
+.previewHeader h3 { font-size: 16px; font-weight: 700; color: white; margin: 0; }
+.platformTabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.platformTab { padding: 6px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; border: 1px solid #1e1e2e; color: #64748b; background: transparent; transition: all 0.2s ease; }
+.platformTab.active { background: rgba(99,102,241,0.15); border-color: #6366f1; color: #a5b4fc; }
+.previewCard { background: #0f0f1a; border: 1px solid #1e1e2e; border-radius: 16px; overflow: hidden; }
+.previewCardHeader { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid #1e1e2e; }
+.previewAvatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #a855f7); }
+.previewUsername { font-size: 14px; font-weight: 600; color: white; }
+.previewHandle { font-size: 12px; color: #64748b; }
+.previewImage { width: 100%; aspect-ratio: 1; background: #1e1e2e; display: flex; align-items: center; justify-content: center; color: #475569; font-size: 13px; overflow: hidden; }
+.previewImage img { width: 100%; height: 100%; object-fit: cover; }
+.previewCaption { padding: 14px 16px; font-size: 14px; color: #94a3b8; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+.previewActions { display: flex; gap: 20px; padding: 12px 16px; border-top: 1px solid #1e1e2e; }
+.previewAction { font-size: 12px; color: #475569; display: flex; align-items: center; gap: 6px; }
+
+/* AI Modal Styles */
+.modalOverlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+.modalContent { background: #0f0f1a; border: 1px solid #1e1e2e; border-radius: 16px; width: 100%; max-width: 500px; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.modalHeader { display: flex; justify-content: space-between; align-items: center; }
+.modalHeader h2 { font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 8px; margin: 0; color: #fff; }
+.modalClose { background: transparent; border: none; color: #64748b; cursor: pointer; transition: color 0.2s; }
+.modalClose:hover { color: #fff; }
+.modalInput { width: 100%; min-height: 100px; background: #0a0a0f; border: 1px solid #1e1e2e; border-radius: 12px; padding: 16px; color: #fff; font-size: 14px; line-height: 1.5; resize: vertical; outline: none; font-family: inherit; }
+.modalInput:focus { border-color: #a855f7; }
+.modalActions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 8px; }
+.btnCancel { padding: 10px 16px; border-radius: 8px; background: transparent; border: 1px solid #334155; color: #94a3b8; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btnCancel:hover { background: rgba(255,255,255,0.05); }
+.btnGenerate { padding: 10px 16px; border-radius: 8px; background: linear-gradient(135deg, #a855f7, #6366f1); color: #fff; cursor: pointer; border: none; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.btnGenerate:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.editorPreview { width: 100%; max-height: 300px; object-fit: contain; background: #0a0a0f; border-radius: 12px; margin-bottom: 16px; border: 1px solid #1e1e2e; }
+.transformGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.transformBtn { padding: 12px; border-radius: 10px; border: 1px solid #1e1e2e; background: #0a0a0f; color: #94a3b8; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.transformBtn:hover { border-color: #6366f1; color: #a5b4fc; background: rgba(99,102,241,0.05); }
+.transformBtn svg { font-size: 20px; }
